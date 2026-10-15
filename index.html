@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FABITO_BLM | Style · Comfort · Quality</title>
+<meta name="description" content="Shop the FABITO_BLM premium T-shirt collection.">
+<style>
+:root{--black:#111;--gold:#b99a59;--cream:#f5f2ec;--muted:#696969}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--black);font-family:Arial,Helvetica,sans-serif;background:white}
+header{display:flex;align-items:center;justify-content:space-between;padding:17px 5%;background:#111;color:white;position:sticky;top:0;z-index:5}
+.logo{font-family:Georgia,serif;font-size:clamp(20px,4vw,30px);font-weight:bold;letter-spacing:4px}.tag{font-size:10px;letter-spacing:3px;color:#d9c18c;margin-top:6px}
+button{cursor:pointer;font:inherit}.cartbtn,.cta,.add{background:var(--gold);color:#111;border:0;padding:13px 18px;font-weight:bold}
+.hero{background:var(--cream);padding:58px 5% 48px;text-align:center;min-height:70vh;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.monogram{width:100px;height:100px;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:42px;font-weight:bold;position:relative;margin-bottom:22px}
+.monogram:before{content:"♛";position:absolute;top:-25px;font-size:30px;color:var(--gold)}
+.hero h1{font: bold clamp(32px,6vw,62px) Georgia,serif;margin:8px 0 12px;letter-spacing:1px}.hero p{max-width:580px;line-height:1.7;color:#555}.eyebrow{font-size:11px;letter-spacing:4px;color:#8a713d;font-weight:bold}
+.cta{margin-top:22px;background:#111;color:white;padding:17px 26px;letter-spacing:2px}
+main{padding:44px 5%}.sectionhead{text-align:center;margin-bottom:25px}.sectionhead h2{font:clamp(28px,4vw,42px) Georgia,serif;margin:10px 0}.sectionhead p{color:var(--muted)}
+.filters{display:flex;gap:8px;overflow-x:auto;padding:8px 0 18px;margin-bottom:10px}.filters button{background:white;border:1px solid #ddd;padding:10px 15px;white-space:nowrap}.filters button.active{background:#111;color:white}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.card{border:1px solid #eee;padding:10px;min-width:0;background:white}.cardpic{background:var(--cream);width:100%;aspect-ratio:1/1.04;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer}.cardpic img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}.card h3{font:22px Georgia,serif;margin:13px 0 6px}.price{font-weight:bold;margin-bottom:10px}.smallrow{display:flex;gap:8px;align-items:center}.smallrow select{min-width:0;flex:1;padding:9px;border:1px solid #ddd;background:#fff}.add{width:100%;margin-top:10px;background:#111;color:white;letter-spacing:1px;font-size:12px;padding:12px}
+.modal{display:none;position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.84);padding:12px;align-items:center;justify-content:center}.modal.open{display:flex}.modalbox{background:white;max-width:760px;width:100%;max-height:95vh;overflow-y:auto;position:relative;padding:18px}.close{position:sticky;top:0;float:right;background:#111;color:white;border:0;padding:10px 14px;z-index:2}.modalbox h2{font:30px Georgia,serif;margin:12px 0}.views{display:grid;grid-template-columns:1fr 1fr;gap:12px;clear:both}.view{background:var(--cream);padding:8px}.view img{width:100%;height:auto;display:block}.view label{display:block;text-align:center;font-size:11px;letter-spacing:2px;margin:8px}
+#cart{margin-top:38px;background:var(--cream);padding:22px}.cartline{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid #ddd}.field{display:block;width:100%;padding:12px;margin:9px 0;border:1px solid #ccc;background:white;font:inherit}.notice{font-size:12px;color:#555;line-height:1.6}
+footer{background:#111;color:white;text-align:center;padding:30px 5%;margin-top:25px}footer p{color:#ccc;font-size:12px;line-height:1.7}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card{padding:7px}.card h3{font-size:19px}.hero{min-height:62vh;padding:40px 6%}.views{grid-template-columns:1fr}.modalbox{max-height:96vh}.logo{letter-spacing:2px}.tag{letter-spacing:1.5px}}
+</style></head><body>
+<header><div><div class="logo">FABITO_BLM</div><div class="tag">STYLE · COMFORT · QUALITY</div></div><button class="cartbtn" onclick="document.getElementById('cart').scrollIntoView()">BAG (<span id="count">0</span>)</button></header>
+<section class="hero" id="home"><div class="monogram">FB</div><div class="eyebrow">PREMIUM EVERYDAY ESSENTIALS</div><h1>FABITO_BLM</h1><p>Keep your style. Own your journey. Discover our signature T-shirts with the “ku fika hita fika” detail — made to express your style in every colour.</p><button class="cta" onclick="document.getElementById('shop').scrollIntoView()">SHOP THE COLLECTION</button></section>
+<main id="shop"><div class="sectionhead"><div class="eyebrow">THE SIGNATURE RANGE</div><h2>Choose your colour</h2><p>Tap any T-shirt to view the front and back in a larger view.</p></div>
+<div class="filters" id="filters"><button class="active" onclick="filterProducts('All',this)">All</button><button onclick="filterProducts('Light',this)">Light</button><button onclick="filterProducts('Dark',this)">Dark</button><button onclick="filterProducts('Blue',this)">Blue</button><button onclick="filterProducts('Green',this)">Green</button><button onclick="filterProducts('Bright',this)">Bright</button><button onclick="filterProducts('Other',this)">Other</button></div>
+<div class="grid" id="grid"></div>
+<section id="cart"><h2>Your bag</h2><div id="items">Your bag is empty.</div><h3 id="total">Total: R0</h3>
+<label for="customer">Full name</label><input class="field" id="customer" placeholder="Your full name">
+<label for="phone">Your phone number</label><input class="field" id="phone" type="tel" placeholder="Your contact number">
+<label for="address">Delivery address or collection</label><textarea class="field" id="address" rows="2" placeholder="Delivery address or collection"></textarea>
+<label for="notes">Order notes (optional)</label><textarea class="field" id="notes" rows="2" placeholder="Anything else we should know?"></textarea>
+<button class="cta" onclick="sendOrder()">ORDER ON WHATSAPP</button><p class="notice">T-shirts: R500 each. EFT payment details will be confirmed privately after the order is checked.</p></section>
+</main><footer><div class="logo">FABITO_BLM</div><p>STYLE · COMFORT · QUALITY<br>“ku fika hita fika”<br>WhatsApp orders: +27 73 824 6242</p></footer>
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()"><div class="modalbox"><button class="close" onclick="closeModal()">× Close</button><h2 id="modalTitle">T-shirt</h2><p class="notice">Scroll down to compare the front and back.</p><div class="views"><div class="view"><img id="modalFront" src="" alt="Front of T-shirt"><label>FRONT VIEW</label></div><div class="view"><img id="modalBack" src="" alt="Back of T-shirt"><label>BACK VIEW</label></div></div><h3>R500</h3><label for="modalSize">Choose size</label><select class="field" id="modalSize"><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select><button class="cta" onclick="addModalToCart()">ADD TO BAG — R500</button></div></div>
+<script>
+const products = [{"name": "White", "front": "front_0.jpg", "back": "back_0.jpg"}, {"name": "Black", "front": "front_1.jpg", "back": "back_1.jpg"}, {"name": "Beige", "front": "front_2.jpg", "back": "back_2.jpg"}, {"name": "Light Grey", "front": "front_3.jpg", "back": "back_3.jpg"}, {"name": "Dark Grey", "front": "front_4.jpg", "back": "back_4.jpg"}, {"name": "Navy Blue", "front": "front_5.jpg", "back": "back_5.jpg"}, {"name": "Royal Blue", "front": "front_6.jpg", "back": "back_6.jpg"}, {"name": "Red", "front": "front_7.jpg", "back": "back_7.jpg"}, {"name": "Olive Green", "front": "front_8.jpg", "back": "back_8.jpg"}, {"name": "Khaki", "front": "front_9.jpg", "back": "back_9.jpg"}, {"name": "Brown", "front": "front_10.jpg", "back": "back_10.jpg"}, {"name": "Purple", "front": "front_11.jpg", "back": "back_11.jpg"}, {"name": "Pink", "front": "front_12.jpg", "back": "back_12.jpg"}, {"name": "Teal", "front": "front_13.jpg", "back": "back_13.jpg"}, {"name": "Burgundy", "front": "front_14.jpg", "back": "back_14.jpg"}, {"name": "Light Blue", "front": "front_15.jpg", "back": "back_15.jpg"}];
+let bag=[], activeProduct=null;
+function renderProducts(filter='All'){
+ const grid=document.getElementById('grid');grid.innerHTML='';
+ products.forEach((p,i)=>{
+  const category=cat(p.name);if(filter!=='All'&&category!==filter)return;
+  const card=document.createElement('article');card.className='card';
+  card.innerHTML=`<div class="cardpic" role="button" tabindex="0" aria-label="View ${p.name} T-shirt front and back" onclick="openModal(${i})"><img src="${p.front}" alt="${p.name} T-shirt front view"></div><h3>${p.name} Tee</h3><div class="price">R500</div><div class="smallrow"><select id="size-${i}" aria-label="Size for ${p.name}"><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select></div><button class="add" onclick="quickAdd(${i})">ADD TO BAG — R500</button>`;
+  grid.appendChild(card);
+ });
+}
+function cat(n){if(['White','Beige','Light Grey','Khaki','Light Blue'].includes(n))return 'Light';if(['Black','Dark Grey','Brown','Burgundy'].includes(n))return 'Dark';if(n.includes('Blue')||n==='Teal')return 'Blue';if(n==='Olive Green')return 'Green';if(['Red','Pink','Purple'].includes(n))return 'Bright';return 'Other'}
+function filterProducts(f,b){document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderProducts(f)}
+function openModal(i){activeProduct=i;const p=products[i];document.getElementById('modalTitle').textContent=p.name+' Tee';document.getElementById('modalFront').src=p.front;document.getElementById('modalBack').src=p.back;document.getElementById('modal').classList.add('open');document.getElementById('modal').scrollTop=0}
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+function quickAdd(i){let size=document.getElementById('size-'+i).value;addItem(i,size);document.getElementById('cart').scrollIntoView({behavior:'smooth'})}
+function addModalToCart(){if(activeProduct!==null){addItem(activeProduct,document.getElementById('modalSize').value);closeModal();document.getElementById('cart').scrollIntoView({behavior:'smooth'})}}
+function addItem(i,size){const p=products[i],old=bag.find(x=>x.i===i&&x.size===size);if(old)old.qty++;else bag.push({i,size,qty:1});renderBag()}
+function renderBag(){document.getElementById('count').textContent=bag.reduce((s,x)=>s+x.qty,0);document.getElementById('items').innerHTML=bag.length?bag.map((x,j)=>`<div class="cartline"><span>${x.qty} × ${products[x.i].name}, size ${x.size}</span><span>R${x.qty*500} <button onclick="removeItem(${j})">×</button></span></div>`).join(''):'Your bag is empty.';document.getElementById('total').textContent='Total: R'+bag.reduce((s,x)=>s+x.qty*500,0).toLocaleString()}
+function removeItem(j){bag.splice(j,1);renderBag()}
+function sendOrder(){if(!bag.length){alert('Please add a T-shirt to your bag first.');return}let n=document.getElementById('customer').value.trim(),ph=document.getElementById('phone').value.trim(),ad=document.getElementById('address').value.trim(),notes=document.getElementById('notes').value.trim();if(!n||!ph||!ad){alert('Please fill in your name, phone number and delivery address or collection.');return}let msg='FABITO_BLM ORDER REQUEST\nName: '+n+'\nCustomer phone: '+ph+'\nDelivery/collection: '+ad+'\n\n'+bag.map(x=>`${x.qty} x ${products[x.i].name} Tee, size ${x.size} — R${x.qty*500}`).join('\n')+'\nTotal: R'+bag.reduce((s,x)=>s+x.qty*500,0)+'\nNotes: '+notes;location.href='https://wa.me/27738246242?text='+encodeURIComponent(msg)}
+renderProducts();
+</script></body></html>
